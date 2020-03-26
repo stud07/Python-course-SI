@@ -4,7 +4,7 @@ def bubble_sort(list):
     while swapped:
         swapped = False
         for i in range(n-1):
-            if list[i] > list[i + 1]:
+            if list[i] < list[i + 1]:
                 temp = list[i]
                 list[i] = list[i+1]
                 list[i+1] = temp
@@ -17,10 +17,10 @@ def partition(list,low,high):
     j = high+1
     while True:
         i += 1
-        while list[i] < middle:
+        while list[i] > middle:
             i += 1
         j -= 1
-        while list[j] > middle:
+        while list[j] < middle:
             j -= 1
         if i >= j:
             return j
@@ -39,3 +39,4 @@ def quick_sort(list):
             quick(num, split_index + 1, high)
 
     quick(list, 0, N-1)
+
