@@ -36,14 +36,14 @@ def Arbritrage(wallet):
     cex_bid = float(cex['bid'])
     cex_ask = float(cex['ask'])
 
-    sell = {'bitbay':bitbay_bid,'blockchain':blockchain_bid,'bitstamp':bitstamp_bid}
-    buy = {'bitbay':bitbay_ask,'blockchain':blockchain_ask,'bitstamp':bitstamp_ask}
+    sell = {'bitbay':bitbay_bid,'blockchain':blockchain_bid,'bitstamp':bitstamp_bid,'cex':cex_bid}
+    buy = {'bitbay':bitbay_ask,'blockchain':blockchain_ask,'bitstamp':bitstamp_ask,'cex':cex_ask}
 
     best_to_buy = min(buy.values())
     best_to_sell = max(sell.values())
 
 
-    Taker = [0.0043, 0.024, 0.005]
+    Taker = [0.0043, 0.024, 0.005,0.025]
 
     buy = [bitbay_ask, blockchain_ask, bitstamp_ask,cex_ask]
     sell = [bitbay_bid, blockchain_bid, bitstamp_bid,cex_bid]
